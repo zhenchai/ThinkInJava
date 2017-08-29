@@ -34,10 +34,8 @@ public class Operator {
         System.out.println("a && b is " + (a && b));
         */
 
-
-
-
-
     }
+
+
 
 }
