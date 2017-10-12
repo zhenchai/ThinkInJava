@@ -1,5 +1,6 @@
 package com.bunny.thinkinjava.collection;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -42,12 +43,38 @@ public class ViewCollection {
         //settings.add("123"); //不能对其修改，会显示UnsupportedOperationException
     }
 
+    /**
+     * subList()可建立子范围视图，该视图是可操作的
+     */
+    private void subViewTest() {
+        List<String> list = new ArrayList<String>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+        for (String str : list) {
+            System.out.print(str + ", ");
+        }
+        System.out.println("-----------");
+
+        List<String> group1 = list.subList(1, 3);
+
+        group1.clear();
+        group1.add("--");
+        for (String str : list) {
+            System.out.print(str + ", ");
+        }
+    }
+
     public static void main(String[] args) {
         ViewCollection viewCollection = new ViewCollection();
-        viewCollection.arraysAsLit();
-        viewCollection.nCopiesTest();
+        //viewCollection.arraysAsLit();
+        //viewCollection.nCopiesTest();
 
-        System.out.println(new String("11") == new String("11"));
+        viewCollection.subViewTest();
+        //System.out.println(new String("11") == new String("11"));
     }
 
 }
