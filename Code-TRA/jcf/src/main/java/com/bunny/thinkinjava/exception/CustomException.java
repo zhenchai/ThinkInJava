@@ -1,5 +1,6 @@
 package com.bunny.thinkinjava.exception;
 
+
 /**
  * Created by zhenchai on 2017/9/27.
  * Description: 自定义异常
